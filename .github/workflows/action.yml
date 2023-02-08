@@ -38,6 +38,7 @@ jobs:
           pwd
           ls
           cd gh-pages
+          git fetch
           git checkout gh-pages
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
