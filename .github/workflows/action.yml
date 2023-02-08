@@ -18,8 +18,8 @@ jobs:
 
       - name: Build
         run: |
-          mkdir gh-pages
-          cd gh-pages
+          #mkdir gh-pages
+          #cd gh-pages
           touch index.html
           cat << EOF > index.html
           <!DOCTYPE html>
@@ -37,7 +37,7 @@ jobs:
         run: |
           pwd
           ls
-          cd gh-pages
+          # cd gh-pages
           git fetch
           git checkout gh-pages
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
