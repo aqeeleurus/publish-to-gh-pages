@@ -1,0 +1,49 @@
+name: GitHub Pages
+
+on:
+  push:
+    branches:
+      - main  # Set a branch name to trigger deploymen
+  pull_request:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-22.04
+    permissions:
+      contents: write
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.ref }}
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Build
+        run: |
+          mkdir gh-pages
+          cd gh-pages
+          touch index.html
+          cat << EOF > index.html
+          <!DOCTYPE html>
+          <html> 
+          <body>
+          <h1>My First Heading</h1>
+          <p>My first paragraph.</p>
+          </body>
+          </html>
+          EOF
+          ls -la
+          pwd
+      
+      - name: Push to gh-pages branch
+        run: |
+          pwd
+          ls
+          
+#       - name: Deploy
+#         uses: peaceiris/actions-gh-pages@v3
+#         # If you're changing the branch from main,
+#         # also change the `main` in `refs/heads/main`
+#         # below accordingly.
+# #         if: ${{ github.ref == 'refs/heads/main' }}
+#         with:
+#           github_token: ${{ secrets.GITHUB_TOKEN }}
+#           publish_dir: ./public
