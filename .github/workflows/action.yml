@@ -37,9 +37,20 @@ jobs:
         run: |
           pwd
           ls
+          git checkout gh-pages
+          touch index.html
+          cat << EOF > index.html
+          <!DOCTYPE html>
+          <html> 
+          <body>
+          <h1>My Latest Heading</h1>
+          <p>My latest paragraph.</p>
+          </body>
+          </html>
+          EOF
           # cd gh-pages
           git fetch
-          git checkout gh-pages
+          
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           git add .
