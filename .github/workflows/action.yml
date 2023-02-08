@@ -16,24 +16,9 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Build
-        run: |
-          #mkdir gh-pages
-          #cd gh-pages
-          touch index.html
-          cat << EOF > index.html
-          <!DOCTYPE html>
-          <html> 
-          <body>
-          <h1>My Latest Heading</h1>
-          <p>My latest paragraph.</p>
-          </body>
-          </html>
-          EOF
-          ls -la
-          pwd
+
       
-      - name: Push to gh-pages branch
+      - name: Build and Push to gh-pages branch
         run: |
           pwd
           ls
