@@ -25,7 +25,7 @@ jobs:
       
       - name: Build and Push to gh-pages branch
         run: |
-          echo ${{ inputs.ClusterName }}
+          echo "${{ inputs.ClusterName }}"
           pwd
           ls
           git fetch
