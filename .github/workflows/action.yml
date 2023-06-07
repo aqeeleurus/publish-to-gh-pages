@@ -5,13 +5,14 @@ on:
     branches:
       - main  # Set a branch name to trigger deployment
   pull_request:
-
-jobs:
-  deploy:
-    inputs:
+  inputs:
       ClusterName:
         type: string
         default: testing
+
+jobs:
+  deploy:
+    
     runs-on: ubuntu-22.04
     permissions:
       contents: write
