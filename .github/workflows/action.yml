@@ -8,7 +8,7 @@ on:
     inputs:
       ClusterName:
         type: string
-        default: testing
+        default: "testing"
 
 jobs:
   deploy:
